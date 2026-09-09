@@ -1,0 +1,39 @@
+GET http://localhost:5084/games
+
+###
+
+GET http://localhost:5084/games/1
+
+###
+
+POST http://localhost:5084/games
+Content-Type: application/json
+
+{
+    "name": "Game 3",
+    "genreId": 1,
+    "price": 79.99,
+    "releaseDate": "2026-09-03"
+}
+
+###
+
+PUT http://localhost:5084/games/3
+Content-Type: application/json
+
+{
+    "name": "Updated game 3",
+    "genreId": 2,
+    "price": 54.99,
+    "releaseDate": "2026-09-03"
+}
+
+###
+
+Delete http://localhost:5084/games/3
+
+###
+
+GET http://localhost:5084/genres
+
+###

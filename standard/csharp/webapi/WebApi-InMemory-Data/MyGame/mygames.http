@@ -1,0 +1,34 @@
+GET http://localhost:5084/games
+
+###
+
+GET http://localhost:5084/games/1
+
+###
+
+POST http://localhost:5084/games
+Content-Type: application/json
+
+{
+    "name": "Game 4",
+    "genre": "Strategy",
+    "price": 69.99,
+    "releaseDate": "2023-09-01"
+}
+
+###
+
+PUT http://localhost:5084/games/1
+Content-Type: application/json
+
+{
+    "name": "Updated game 1",
+    "genre": "Action-Adventure",
+    "price": 59.99,
+    "releaseDate": "2023-01-01"
+}
+
+###
+
+Delete http://localhost:5084/games/1
+
