@@ -1,0 +1,40 @@
+GET http://localhost:5084/games?Search=Just a Name&PageNumber=1&PageSize=6
+
+###
+
+GET http://localhost:5084/games/2
+
+###
+
+POST http://localhost:5084/games
+Content-Type: application/json
+
+{
+    "name": "Game 1",
+    "genreId": 1,
+    "price": 39.99,
+    "releaseDate": "2026-09-03"
+}
+
+###
+
+PUT http://localhost:5084/games/2
+Content-Type: application/json
+
+{
+    "id": 2,
+    "name": "Updated game 1",
+    "genreId": 2,
+    "price": 49.99,
+    "releaseDate": "2026-09-08"
+}
+
+###
+
+DELETE http://localhost:5084/games/1
+
+###
+
+GET http://localhost:5084/genres
+
+###

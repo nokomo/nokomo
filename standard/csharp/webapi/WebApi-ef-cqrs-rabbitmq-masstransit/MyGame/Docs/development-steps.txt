@@ -1,0 +1,22 @@
+
+//-------------------//
+ORM
+
+- create enity classes in a Models folder
+- add entity framework nugets
+-- Microsoft.EntityFrameworkCore.Sqlserver
+- create dbcontext file
+- Install dotnet-ef tools from nuget.org
+- run "dotnet tool install --global dotnet-ef --version 10.0.11" in terminal
+- Add Microsoft.EntityFrameworkCore.Design 
+- Create Mgration using 
+  "dotnet ef migrations add InitialCreate --output-dir Data\Migrations" in terminal
+- run "dotnet ef database update" in terminal
+- create a db migration extension method and invoks it in main program.
+- add data seeding in AddSelServer in main program.
+- roll back of migration
+  -- Only if the migration has been applied to database and not last migration:
+     -- Roll back the database: dotnet ef database update <Name_Of_Previous_Migration>
+  -- Delete the migration files: dotnet ef migrations remove
+  
+  -- if only one migration: dotnet ef database update 0 and dotnet ef migrations remove
