@@ -2,37 +2,30 @@ using MyGame.Dtos;
 using MyGame.Data;
 using MyGame.Models;
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
 
 namespace MyGame.Services;
 
-public class GameService(MyGameContext context, IMapper mapper) : IGameService
+public class GameService(MyGameContext context) : IGameService
 {
 
   public async Task<IEnumerable<GameSummaryDto>> GetGamesAsync()
   {
     var games = await context.Games.Include(g => g.Genre).ToListAsync();
-    return games.Select(g => mapper.Map<GameSummaryDto>(g));
+    return games.Select(g => g.ToGameSummaryDto());
   }
 
   public async Task<GameDetailsDto?> GetGameByIdAsync(int id)
   {
     var game = await context.Games.FindAsync(id);
-    return game is not null ? mapper.Map<GameDetailsDto>(game) : null;
+    return game?.ToGameDetailDto();
   }
 
   public async Task<GameDetailsDto> CreateGameAsync(CreateGameDto newGame)
   {
-    Game game = new()
-    {
-      Name = newGame.Name,
-      GenreId = newGame.GenreId,
-      Price = newGame.Price,
-      ReleaseDate = newGame.ReleaseDate
-    };
+    Game game = newGame.ToGame();
     await context.Games.AddAsync(game);
     await context.SaveChangesAsync();
-    return mapper.Map<GameDetailsDto>(game);
+    return game.ToGameDetailDto();
   }
 
   public async Task<GameDetailsDto?> UpdateGameAsync(int id, UpdateGameDto updatedGame)
@@ -40,11 +33,11 @@ public class GameService(MyGameContext context, IMapper mapper) : IGameService
     var game = await context.Games.FindAsync(id);
     if (game is null) return null;
 
-    mapper.Map(updatedGame, game);
+    game = updatedGame.ToGame();
     context.Games.Update(game);
     await context.SaveChangesAsync();
 
-    return mapper.Map<GameDetailsDto>(game);
+    return game.ToGameDetailDto();
   }
 
   public async Task<bool> DeleteGameAsync(int id)
