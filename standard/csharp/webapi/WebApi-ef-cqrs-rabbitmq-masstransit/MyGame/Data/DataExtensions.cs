@@ -18,7 +18,7 @@ public static class DataExtensions
     var connectionString = configuration.GetConnectionString("MyStoreDb") ??
              throw new InvalidOperationException("Connection string 'MyStoreDb' not found.");
     services.AddDbContext<MyGameContext>(options =>
-      options.UseSqlServer(connectionString));
+      options.UseNpgsql(connectionString));
   }
 
   public static void AddSeeding(this WebApplication app)

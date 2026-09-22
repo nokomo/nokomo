@@ -8,6 +8,7 @@ ORM
 - create dbcontext file
 - Install dotnet-ef tools from nuget.org
 - run "dotnet tool install --global dotnet-ef --version 10.0.11" in terminal
+- add export PATH="$PATH:/home/nokomo/.dotnet/tools" to ~/.bashrc
 - Add Microsoft.EntityFrameworkCore.Design 
 - Create Mgration using 
   "dotnet ef migrations add InitialCreate --output-dir Data\Migrations" in terminal
@@ -20,3 +21,13 @@ ORM
   -- Delete the migration files: dotnet ef migrations remove
   
   -- if only one migration: dotnet ef database update 0 and dotnet ef migrations remove
+
+//---------Rabbitmq-----------//
+add nuget MassTransit.EntityFrameworkCore
+add nuget MassTransit.RabbitMQ
+add to appsettings
+ "RabbitMq": {
+    "Host": "localhost",
+    "UserName": "guest",
+    "Password": "guest"
+  }

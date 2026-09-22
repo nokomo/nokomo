@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:17
+    container_name: my_postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: MyGameDbPw
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: my_rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: MyRabbitMqUser
+      RABBITMQ_DEFAULT_PASS: MyRabbitMqPw
+    ports:
+      - "5672:5672"       # RabbitMQ broker port
+      - "15672:15672"     # RabbitMQ Management Web UI port
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+volumes:
+  pg_data:
+    driver: local
+  rabbitmq_data:
+    driver: local
