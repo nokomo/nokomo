@@ -31,3 +31,9 @@ add to appsettings
     "UserName": "guest",
     "Password": "guest"
   }
+
+//--------------------- docker containers --------------------
+use "docker compose up -d" in termial to start all services in docker-compose.yml file
+use "docker compose down" i terminal to stop all services in docker-compose.yml file
+docker container ls to list all containers that are running now
+docker container start/stop/rm <container-name> to start or stop or remove a container. 
