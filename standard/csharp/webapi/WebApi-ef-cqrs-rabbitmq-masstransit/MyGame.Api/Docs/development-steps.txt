@@ -37,3 +37,11 @@ use "docker compose up -d" in termial to start all services in docker-compose.ym
 use "docker compose down" i terminal to stop all services in docker-compose.yml file
 docker container ls to list all containers that are running now
 docker container start/stop/rm <container-name> to start or stop or remove a container. 
+
+//------------------------ Runinng the application -------------------------------
+docker compose up -d
+cd ../MyGame.Api
+dotnet run
+How to use or see web api operations: 
+  - Start a browser and point to http://localhost:5084/scalar/ or use MyGames.http file (part of Rest Client extension) in the root of the application
+  - Use DBeaver CE desktop to see data in the Postgres database.
