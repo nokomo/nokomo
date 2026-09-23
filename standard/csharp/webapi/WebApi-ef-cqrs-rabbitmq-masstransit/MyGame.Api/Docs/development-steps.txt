@@ -45,3 +45,38 @@ dotnet run
 How to use or see web api operations: 
   - Start a browser and point to http://localhost:5084/scalar/ or use MyGames.http file (part of Rest Client extension) in the root of the application
   - Use DBeaver CE desktop to see data in the Postgres database.
+
+//------------------ .vscode -------------------
+To start up Api and worker projects you need to create a launch.json in .vscode folder
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch MyGame.Api",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/WebApi-ef-cqrs-rabbitmq-masstransit/MyGame.Api.csproj"
+    },
+    {
+      "name": "Launch MyGame.Worker",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/WebApi-ef-cqrs-rabbitmq-masstransit/MyGame.Worker.csproj"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch All (API & Worker)",
+      "configurations": [
+        "Launch MyGame.Api",
+        "Launch MyGame.Worker"
+      ],
+      "stopAll": true
+    }
+  ]
+}
+//---------------------- Service Worker -------------------------------
+Add nuget package MassTransit.RabbitMq to Worker project

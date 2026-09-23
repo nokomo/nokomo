@@ -1,0 +1,30 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch MyGame.Api",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/WebApi-ef-cqrs-rabbitmq-masstransit/MyGame.Api.csproj"
+    },
+    {
+      "name": "Launch MyGame.Worker",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/WebApi-ef-cqrs-rabbitmq-masstransit/MyGame.Worker.csproj"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch All (API & Worker)",
+      "configurations": [
+        "Launch MyGame.Api",
+        "Launch MyGame.Worker"
+      ],
+      "stopAll": true
+    }
+  ]
+}

@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="MyGame.Api/MyGame.Api.csproj" />
+  <Project Path="MyGame.Worker/MyGame.Worker.csproj" />
+  <Project Path="NyGame.Contracts/NyGame.Contracts.csproj" />
 </Solution>
