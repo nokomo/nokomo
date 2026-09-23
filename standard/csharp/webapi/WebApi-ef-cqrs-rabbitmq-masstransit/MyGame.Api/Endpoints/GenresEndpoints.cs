@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using MyGame.Data;
-using MyGame.Dtos;
+using MyGame.Api.Data;
+using NyGame.Contracts.Dtos;
 
 namespace MyGame.Endpoints;
 

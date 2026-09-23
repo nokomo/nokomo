@@ -1,17 +1,19 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using MyGame.Data;
-using MyGame.Dtos;
-using MyGame.Models;
+using MyGame.Api.Data;
+using MyGame.Api.Dtos;
+using MyGame.Features.Games.Queries.GetGames;
+using NyGame.Contracts.Dtos;
+using NyGame.Contracts.Models;
 
-namespace MyGame.Features.Games.Queries.GetGames
+namespace MyGame.Api.Features.Games.Queries.GetGames
 {
-  public record class GetGamesQueryHandler(MyGameContext context) : IRequestHandler<GetGamesQuery, PagedResult<GameSummaryDto>>
+  public record class GetGamesQueryHandler(MyGameContext Context) : IRequestHandler<GetGamesQuery, PagedResult<GameSummaryDto>>
   {
     public async Task<PagedResult<GameSummaryDto>> Handle(GetGamesQuery request, CancellationToken cancellationToken)
     {
       var filter = request.Filter;
-      var query = context.Games.AsQueryable();
+      var query = Context.Games.AsQueryable();
       if (!string.IsNullOrEmpty(filter.Search))
       {
         query = query.Where(g => g.Name.Contains(filter.Search));

@@ -1,7 +1,7 @@
 using System;
 using FluentValidation;
 
-namespace MyGame.Features.Games.Commands.UpdateGame;
+namespace MyGame.Api.Features.Games.Commands.UpdateGame;
 
 public class UpdateGameCommandValidator : AbstractValidator<UpdateGameCommand>
 {

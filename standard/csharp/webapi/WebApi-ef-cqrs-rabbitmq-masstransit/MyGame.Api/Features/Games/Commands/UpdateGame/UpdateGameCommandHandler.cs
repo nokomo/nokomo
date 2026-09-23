@@ -1,11 +1,10 @@
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyGame.Data;
-using MyGame.Dtos;
-using MyGame.Models;
+using MyGame.Api.Data;
+using NyGame.Contracts.Dtos;
+using NyGame.Contracts.Models;
 
-namespace MyGame.Features.Games.Commands.UpdateGame;
+namespace MyGame.Api.Features.Games.Commands.UpdateGame;
 
 public record UpdateGameCommandHandler(MyGameContext context) : IRequestHandler<UpdateGameCommand, UpdateGameDto?>
 {

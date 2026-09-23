@@ -1,10 +1,10 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using MyGame.Data;
-using MyGame.Dtos;
-using MyGame.Models;
+using MyGame.Api.Data;
+using NyGame.Contracts.Dtos;
+using NyGame.Contracts.Models;
 
-namespace MyGame.Features.Games.Queries.GetGameById;
+namespace MyGame.Api.Features.Games.Queries.GetGameById;
 
 public record GetGameByIdQueryHandler(MyGameContext context) : IRequestHandler<GetGameByIdQuery, GameDetailsDto?>
 {

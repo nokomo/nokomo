@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MyGame.Dtos;
+namespace NyGame.Contracts.Dtos;
 
 public record CreateGameDto(
     [Required][MaxLength(50)] string Name,

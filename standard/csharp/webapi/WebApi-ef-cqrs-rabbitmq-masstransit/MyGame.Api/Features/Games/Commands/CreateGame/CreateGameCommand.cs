@@ -1,12 +1,13 @@
 using MediatR;
-using MyGame.Dtos;
+using NyGame.Contracts.Dtos;
 
-namespace MyGame.Features.Games.Commands.CreateGame;
-
-public record CreateGameCommand
-(
-  string Name,
-  int GenreId,
-  decimal Price,
-  DateOnly ReleaseDate
-) : IRequest<GameDetailsDto>;
+namespace MyGame.Api.Features.Games.Commands.CreateGame
+{
+    public record CreateGameCommand
+    (
+      string Name,
+      int GenreId,
+      decimal Price,
+      DateOnly ReleaseDate
+    ) : IRequest<GameDetailsDto>;
+}

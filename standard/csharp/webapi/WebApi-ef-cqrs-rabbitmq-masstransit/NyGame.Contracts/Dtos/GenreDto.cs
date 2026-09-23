@@ -1,4 +1,4 @@
-namespace MyGame.Dtos;
+namespace NyGame.Contracts.Dtos;
 
 public record GenreDto(
     int Id,

@@ -1,8 +1,8 @@
-GET http://localhost:5084/games?Search=Just a Name&PageNumber=1&PageSize=6
+GET http://localhost:5084/games?PageNumber=1&PageSize=6
 
 ###
 
-GET http://localhost:5084/games/2
+GET http://localhost:5084/games/1
 
 ###
 

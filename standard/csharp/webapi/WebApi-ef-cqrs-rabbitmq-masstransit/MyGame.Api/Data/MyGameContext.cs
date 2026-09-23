@@ -1,8 +1,7 @@
-using System;
 using Microsoft.EntityFrameworkCore;
-using MyGame.Models;
+using NyGame.Contracts.Models;
 
-namespace MyGame.Data;
+namespace MyGame.Api.Data;
 
 public class MyGameContext(DbContextOptions<MyGameContext> options) : DbContext(options)
 {

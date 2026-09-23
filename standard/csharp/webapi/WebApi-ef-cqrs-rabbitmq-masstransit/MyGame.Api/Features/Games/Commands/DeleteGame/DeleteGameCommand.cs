@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace MyGame.Features.Games.Commands.DeleteGame;
+namespace MyGame.Api.Features.Games.Commands.DeleteGame;
 
 public record class DeleteGameCommand
 (

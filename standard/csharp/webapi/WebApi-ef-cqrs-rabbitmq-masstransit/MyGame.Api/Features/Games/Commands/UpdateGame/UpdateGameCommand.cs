@@ -1,7 +1,7 @@
 using MediatR;
-using MyGame.Dtos;
+using NyGame.Contracts.Dtos;
 
-namespace MyGame.Features.Games.Commands.UpdateGame;
+namespace MyGame.Api.Features.Games.Commands.UpdateGame;
 
 public record UpdateGameCommand
 (

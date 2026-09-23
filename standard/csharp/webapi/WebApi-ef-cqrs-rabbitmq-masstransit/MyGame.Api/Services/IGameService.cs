@@ -1,4 +1,4 @@
-using MyGame.Dtos;
+using NyGame.Contracts.Dtos;
 
 namespace MyGame.Services
 {

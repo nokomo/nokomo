@@ -3,7 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyGame.Data;
+using MyGame.Api.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -22,7 +22,7 @@ namespace MyGame.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MyGame.Models.Game", b =>
+            modelBuilder.Entity("NyGame.Contracts.Models.Game", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,7 +35,8 @@ namespace MyGame.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -50,7 +51,7 @@ namespace MyGame.Data.Migrations
                     b.ToTable("Games");
                 });
 
-            modelBuilder.Entity("MyGame.Models.Genre", b =>
+            modelBuilder.Entity("NyGame.Contracts.Models.Genre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,9 +68,9 @@ namespace MyGame.Data.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("MyGame.Models.Game", b =>
+            modelBuilder.Entity("NyGame.Contracts.Models.Game", b =>
                 {
-                    b.HasOne("MyGame.Models.Genre", "Genre")
+                    b.HasOne("NyGame.Contracts.Models.Genre", "Genre")
                         .WithMany()
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -1,7 +1,7 @@
 using MediatR;
-using MyGame.Dtos;
+using NyGame.Contracts.Dtos;
 
-namespace MyGame.Features.Games.Queries.GetGameById;
+namespace MyGame.Api.Features.Games.Queries.GetGameById;
   
 public record GetGameByIdQuery
 (

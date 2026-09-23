@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using MyGame.Models;
+using MyGame.Api.Data;
+using NyGame.Contracts.Models;
 
 namespace MyGame.Data;
 

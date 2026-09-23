@@ -1,10 +1,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using MyGame.Features.Games.Commands.CreateGame;
-using MyGame.Features.Games.Commands.DeleteGame;
-using MyGame.Features.Games.Commands.UpdateGame;
 using MyGame.Features.Games.Queries.GetGames;
-using MyGame.Features.Games.Queries.GetGameById;
+using MyGame.Api.Features.Games.Commands.DeleteGame;
+using MyGame.Api.Features.Games.Commands.UpdateGame;
+using MyGame.Api.Features.Games.Queries.GetGameById;
+using MyGame.Api.Features.Games.Commands.CreateGame;
 
 namespace MyGame.Endpoints;
 

@@ -1,5 +1,6 @@
 using MediatR;
-using MyGame.Dtos;
+using MyGame.Api.Dtos;
+using NyGame.Contracts.Dtos;
 
 namespace MyGame.Features.Games.Queries.GetGames;
 

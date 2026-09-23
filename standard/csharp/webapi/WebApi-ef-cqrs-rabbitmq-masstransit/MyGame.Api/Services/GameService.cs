@@ -1,7 +1,7 @@
-using MyGame.Dtos;
-using MyGame.Data;
-using MyGame.Models;
 using Microsoft.EntityFrameworkCore;
+using MyGame.Api.Data;
+using NyGame.Contracts.Dtos;
+using NyGame.Contracts.Models;
 
 namespace MyGame.Services;
 

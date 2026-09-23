@@ -1,4 +1,4 @@
-namespace MyGame.Dtos;
+namespace MyGame.Api.Dtos;
 
 public class PagedResult<T>
 {

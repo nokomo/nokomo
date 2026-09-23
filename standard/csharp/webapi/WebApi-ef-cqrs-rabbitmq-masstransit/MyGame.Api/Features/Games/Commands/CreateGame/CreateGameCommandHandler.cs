@@ -1,9 +1,9 @@
 using MediatR;
-using MyGame.Data;
-using MyGame.Dtos;
-using MyGame.Models;
+using MyGame.Api.Data;
+using NyGame.Contracts.Dtos;
+using NyGame.Contracts.Models;
 
-namespace MyGame.Features.Games.Commands.CreateGame;
+namespace MyGame.Api.Features.Games.Commands.CreateGame;
 
 public record class CreateGameCommandHandler(MyGameContext Context) : IRequestHandler<CreateGameCommand, GameDetailsDto>
 {
