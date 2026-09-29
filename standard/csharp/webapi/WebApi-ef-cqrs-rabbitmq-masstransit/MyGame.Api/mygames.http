@@ -1,4 +1,4 @@
-GET http://localhost:5084/games?PageNumber=1&PageSize=6
+GET http://localhost:5084/games?PageNumber=1&PageSize=10
 
 ###
 
@@ -10,28 +10,28 @@ POST http://localhost:5084/games
 Content-Type: application/json
 
 {
-    "name": "Game 1",
+    "name": "Game 23",
     "genreId": 1,
-    "price": 39.99,
-    "releaseDate": "2026-09-03"
+    "price": 45.99,
+    "releaseDate": "2026-09-28"
 }
 
 ###
 
-PUT http://localhost:5084/games/2
+PUT http://localhost:5084/games/13
 Content-Type: application/json
 
 {
-    "id": 2,
-    "name": "Updated game 1",
-    "genreId": 2,
-    "price": 49.99,
-    "releaseDate": "2026-09-08"
+    "id": 13,
+    "name": "Updated game 13",
+    "genreId": 3,
+    "price": 40.99,
+    "releaseDate": "2026-09-29"
 }
 
 ###
 
-DELETE http://localhost:5084/games/1
+DELETE http://localhost:5084/games/7
 
 ###
 

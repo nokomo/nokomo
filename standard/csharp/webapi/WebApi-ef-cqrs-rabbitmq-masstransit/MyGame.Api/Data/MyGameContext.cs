@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using NyGame.Contracts.Models;
 
@@ -15,5 +16,8 @@ public class MyGameContext(DbContextOptions<MyGameContext> options) : DbContext(
         modelBuilder.Entity<Game>()
           .Property(g => g.Price)
           .HasColumnType("decimal(18,2)");
+        modelBuilder.AddOutboxMessageEntity();
+        modelBuilder.AddOutboxStateEntity();
+        modelBuilder.AddInboxStateEntity();
     }
 }

@@ -1,4 +1,5 @@
 using NyGame.Contracts.Dtos;
+using NyGame.Contracts.Events;
 
 namespace NyGame.Contracts.Models;
 
@@ -12,6 +13,33 @@ public static class MappingExtensions
       game.GenreId,
       game.Price,
       game.ReleaseDate);
+  }
+
+  public static GameCreated ToGameCreated(this Game game)
+  {
+    return new GameCreated (
+      game.Id,
+      game.Name,
+      game.GenreId,
+      game.Price,
+      game.ReleaseDate
+    );
+  }
+
+  public static GameDeleted ToGameDeleted(this Game game)
+  {
+    return new GameDeleted (game.Id);
+  }
+
+  public static GameUpdated ToGameUpdated(this Game game)
+  {
+    return new GameUpdated (
+      game.Id,
+      game.Name,
+      game.GenreId,
+      game.Price,
+      game.ReleaseDate
+    );
   }
 
   public static Game ToGame(this GameDetailsDto gameDetailsDto)

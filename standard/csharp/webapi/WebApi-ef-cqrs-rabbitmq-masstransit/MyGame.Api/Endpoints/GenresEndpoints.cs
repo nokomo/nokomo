@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using MyGame.Api.Data;
 using NyGame.Contracts.Dtos;
 
-namespace MyGame.Endpoints;
+namespace MyGame.Api.Endpoints;
 
 public static class GenresEndpoints
 {

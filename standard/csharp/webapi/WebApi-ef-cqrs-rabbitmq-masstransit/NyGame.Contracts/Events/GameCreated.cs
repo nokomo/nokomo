@@ -7,7 +7,6 @@ public record GameCreated
 (
     int Id,
     string Name,
-    Genre? Genre,
     int GenreId,
     decimal Price,
     DateOnly ReleaseDate

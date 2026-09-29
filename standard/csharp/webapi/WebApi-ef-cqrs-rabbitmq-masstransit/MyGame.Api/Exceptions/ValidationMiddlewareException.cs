@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace MyGame.Exceptions;
+namespace MyGame.Api.Exceptions;
 
 public class ValidationExceptionMiddleware
 {

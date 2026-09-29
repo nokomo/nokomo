@@ -6,7 +6,7 @@ using MyGame.Api.Features.Games.Commands.UpdateGame;
 using MyGame.Api.Features.Games.Queries.GetGameById;
 using MyGame.Api.Features.Games.Commands.CreateGame;
 
-namespace MyGame.Endpoints;
+namespace MyGame.Api.Endpoints;
 
 public static class GameEndpoints
 {
