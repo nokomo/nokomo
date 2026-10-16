@@ -1,9 +1,9 @@
 
 from fastapi import FastAPI, status,Depends, HTTPException
 from sqlalchemy.orm import Session
-from models import Product as ProductModel
-from schemas import ProductCreate, ProductUpdate, Product, ProductBase
-from db import  get_db, create_table
+from app.models import Product as ProductModel
+from app.schemas import ProductCreate, ProductUpdate, Product, ProductBase
+from app.db import  get_db, create_table
 from contextlib import asynccontextmanager
 
 @asynccontextmanager

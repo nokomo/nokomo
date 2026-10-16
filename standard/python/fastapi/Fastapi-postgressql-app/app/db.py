@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-from config import DATABASE_URL, IS_PRODUCTION
+from app.config import DATABASE_URL, IS_PRODUCTION
 
 # echo=True for development debugging
 engine = create_engine(DATABASE_URL, echo=not IS_PRODUCTION) 

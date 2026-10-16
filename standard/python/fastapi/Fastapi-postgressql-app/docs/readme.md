@@ -2,12 +2,32 @@
 - create an app folder inside the application folder
 - create virtual environment <code>python -m venv [name of venv] </code>
 - activiate the virtual environment <code>source [./name of venv/bin/activate]</code> or <code>[name of venv/Scripts/Activate.ps1]</code>
-- install fastapi <code>pip install fastapi[standard]</code>
-- install web server <code>pip install uvicorn</code>
-- install SQLAlchemy <code>pip install sqlalchemy</code>
-- install psycopg2-binary <code>pip install psycopg2-binary</code>
-- install pydantic <code>pip install pydantic</code>
-- create a file in the app folder and name it main.py
-- run uvicorn main:app --reload --port 8050
-- create a new file named models.py inside the app folder
-- define a Product model using Py
+- install dependencies using pip and requirement.txt <code> pip install -r requirements.txt</code> or manually using following install commands
+    - install python-dotenv <code>pip install python</code>
+    - install fastapi <code>pip install fastapi[standard]</code>
+    - install web server <code>pip install uvicorn</code>
+    - install SQLAlchemy <code>pip install sqlalchemy</code>
+    - install psycopg2-binary <code>pip install psycopg2-binary</code>
+    - install pydantic <code>pip install pydantic</code>
+- Create a Postgres database using the `docker-compose.yml` file located in the root of the application folder. Check whether a database already exists within the Docker container. If a database exists, clear it before starting. The information required for the environment files can be found in the `docker-compose.yml` file and can also be retrieved via the pgAdmin application.
+- Add two environment files—`.env.development` for development and `.env.production` for production—with the following content. Fill in the values ​​for any empty fields, as well as any fields that do not yet have the correct values. These fields relate to the Postgres database.  
+   
+    ------- development ------
+    - APP_ENV=development              
+    - DB_USER=postgres
+    - DB_PASSWORD=
+    - DB_HOST=localhost
+    - DB_PORT=5432
+    - DB_NAME=fastapidb   
+
+    ------- production -------
+    - APP_ENV=production
+    - DB_USER=prod_user
+    - DB_PASSWORD=
+    - DB_HOST=10.0.0.5  # Or a cloud database URI
+    - DB_PORT=5432
+    - DB_NAME=prod_fastapidb  
+    
+- run uvicorn app.main:app --reload --port 8050
+- start a web browser and navigate to http://localhost:8050/docs to test the API.  
+- To stop the server, press Ctrl+C in the terminal.
