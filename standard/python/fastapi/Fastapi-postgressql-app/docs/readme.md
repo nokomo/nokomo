@@ -1,0 +1,13 @@
+- create a folder for the application
+- create an app folder inside the application folder
+- create virtual environment <code>python -m venv [name of venv] </code>
+- activiate the virtual environment <code>source [./name of venv/bin/activate]</code> or <code>[name of venv/Scripts/Activate.ps1]</code>
+- install fastapi <code>pip install fastapi[standard]</code>
+- install web server <code>pip install uvicorn</code>
+- install SQLAlchemy <code>pip install sqlalchemy</code>
+- install psycopg2-binary <code>pip install psycopg2-binary</code>
+- install pydantic <code>pip install pydantic</code>
+- create a file in the app folder and name it main.py
+- run uvicorn main:app --reload --port 8050
+- create a new file named models.py inside the app folder
+- define a Product model using Py

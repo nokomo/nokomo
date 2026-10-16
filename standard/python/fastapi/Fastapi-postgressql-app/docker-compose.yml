@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: fastapidb_container
+    restart: always
+    environment:
+      POSTGRES_DB: fastapidb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: MyGameDbPw
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql
+
+volumes:
+  pg_data:
+    driver: local
+    
+   
+
+    
