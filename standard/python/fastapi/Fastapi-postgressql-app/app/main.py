@@ -50,7 +50,7 @@ async def create_product(product: ProductCreate, db: Session = Depends(get_db)):
     db.refresh(new_product)
     return new_product
 
-@app.put("/product/{product_id}", response_model=Product)
+@app.put("/products/{product_id}", response_model=Product)
 async def update_product(product_id: int, product: ProductUpdate, db: Session = Depends(get_db)):
     existing_product = db.query(ProductModel).filter(ProductModel.id == product_id).first()
     if not existing_product:
@@ -61,7 +61,7 @@ async def update_product(product_id: int, product: ProductUpdate, db: Session = 
     db.commit()
     return existing_product
 
-@app.delete("/product/{product_id}", status_code=status.HTTP_204_NO_CONTENT)
+@app.delete("/products/{product_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_product(product_id: int, db: Session = Depends(get_db)):
     product = db.query(ProductModel).filter(ProductModel.id == product_id).first()
     if not product:
@@ -72,4 +72,4 @@ async def delete_product(product_id: int, db: Session = Depends(get_db)):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8050)

@@ -1,0 +1,34 @@
+# Define a local variable for the base URL
+@baseUrl = http://localhost:8050
+
+### Test the Root Endpoint
+GET {{baseUrl}}/
+
+### Test Get All Items (GET Request)
+GET {{baseUrl}}/products
+
+### Create an Item (POST Request)
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+    "name": "Gaming Laptop",
+    "price": 999.99,
+    "quantity": 10,
+    "description": "High performance laptop"
+}
+
+### Update an Item (PUT Request)
+PUT {{baseUrl}}/products/8
+Content-Type: application/json
+
+{
+    "name": "Gaming Laptop",
+    "price": 777.99,
+    "quantity": 10,
+    "description": "High performance laptop",
+    "id": 9
+  }
+
+### Delete an Item (DELETE Request)
+DELETE {{baseUrl}}/products/8
